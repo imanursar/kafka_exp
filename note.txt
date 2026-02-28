@@ -1,0 +1,18 @@
+docker exec -it etl_kafka sh
+python producer_device_status.py
+docker exec -it ksqldb-server sh
+docker exec -it ksqldb-server ksql
+
+cd home/etl/final
+python producer_device_status.py
+python producer_device_location.py
+
+
+SHOW STREAMS;
+DROP STREAM JOIN_EVENTS;
+DROP STREAM STREAM_LOCATION;
+DROP STREAM STREAM_STATUS;
+
+SHOW TABLES;
+DROP TABLE DEVICE_WINAGG_STATUS_PER2S;
+DROP TABLE DEVICE_WINAGG_STATUS_PERDEVICE;

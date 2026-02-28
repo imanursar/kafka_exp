@@ -1,0 +1,18 @@
+{
+  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+  "table.name.format": "gis_data.device_winagg_status_perdevice",
+  "connection.password": "datagis",
+  "topics": "DEVICE_WINAGG_STATUS_PERDEVICE",
+  "value.converter.schema.registry.url": "http://kafka-schema-registry:8081",
+  "auto.evolve": "true",
+  "connection.user": "datagis",
+  "name": "ksqldb-postgres-device_winagg_status_perdevice",
+  "auto.create": "true",
+  "value.converter": "io.confluent.connect.avro.AvroConverter",
+  "connection.url": "jdbc:postgresql://postgres:5432/kafka",
+  "insert.mode": "upsert",
+  "key.converter": "io.confluent.connect.avro.AvroConverter",
+  "pk.mode": "record_key",
+  "key.converter.schema.registry.url": "http://kafka-schema-registry:8081",
+  "pk.fields": "DEVICE_ID"
+}

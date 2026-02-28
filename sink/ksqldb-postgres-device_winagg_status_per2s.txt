@@ -1,0 +1,17 @@
+{
+  "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+  "table.name.format": "gis_data.device_winagg_status_per2s",
+  "connection.password": "datagis",
+  "topics": "DEVICE_WINAGG_STATUS_PER2S",
+  "value.converter.schema.registry.url": "http://kafka-schema-registry:8081",
+  "auto.evolve": "true",
+  "connection.user": "datagis",
+  "name": "ksqldb-postgres-device_winagg_status_per2s",
+  "auto.create": "true",
+  "value.converter": "io.confluent.connect.avro.AvroConverter",
+  "connection.url": "jdbc:postgresql://postgres:5432/kafka",
+  "insert.mode": "insert",
+  "key.converter": "io.confluent.connect.avro.AvroConverter",
+  "pk.mode": "kafka",
+  "key.converter.schema.registry.url": "http://kafka-schema-registry:8081"
+}
