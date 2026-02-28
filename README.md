@@ -30,18 +30,25 @@ Outcome: A unified, real-time intelligence system that transforms raw movement d
 ## How to install and to use
 
 install kafka containers
+
 `docker compose  --profile kafka  up  -d`
 
 install postgresql container
+
 `docker-compose up -d --build postgres`
 
 access the container with
+
 `docker exec -it ksqldb-server ksql`
+
 `docker exec -it etl_kafka sh`
 
 run the generator
+
 `python producer_device_status.py`
+
 `python producer_device_location.py`
 
 run the FastAPI with
+
 `uvicorn main:app --host 0.0.0.0 --port 8080 --reload`
